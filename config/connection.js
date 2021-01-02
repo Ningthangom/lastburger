@@ -14,6 +14,10 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
+connection.on('error', function(err) {
+  console.log("[mysql error]",err);
+});
+
 connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);

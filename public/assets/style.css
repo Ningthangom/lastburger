@@ -1,0 +1,13 @@
+
+body {
+    background-size: cover;
+    background-color: white;
+    background-position: 50%;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Red Hat Text', sans-serif;
+  }
+  
+.devoured-container{
+    background-color: white;
+}

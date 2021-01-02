@@ -16,15 +16,23 @@ router.get("/",function(req,res){
 });
 
 // posting new burger
-router.post("/api/burgers",function(req,res){
+ router.post("/api/burgers",function(req,res){
     burger.getInput(req.body.burger_name, function(err,result){
-        if(err){
-            throw err;
-        }
         console.log(result);
         res.json(result);
     })
-});
+}); 
+
+/* router.post("/api/burgers", function(req, res) {
+    burger.getInput([
+      "burger_name"
+    ], [
+      req.body.burger_name
+    ], function(result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    });
+  }); */
 
 //update boolean value when clicked
 router.put("/api/bugers/devoured/:id",function(req,res){
