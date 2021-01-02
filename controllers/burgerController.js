@@ -15,15 +15,16 @@ router.get("/",function(req,res){
     })
 });
 
-// posting new burger
+ // posting new burger
  router.post("/api/burgers",function(req,res){
     burger.getInput(req.body.burger_name, function(err,result){
         console.log(result);
-        res.json(result);
+        console.log("THIS IS THE INPUT:  " + req.body.burger_name);
+        res.json(req.body.burger_name);
     })
-}); 
-
-/* router.post("/api/burgers", function(req, res) {
+});  
+ 
+/*   router.post("/api/burgers", function(req, res) {
     burger.getInput([
       "burger_name"
     ], [
@@ -32,15 +33,25 @@ router.get("/",function(req,res){
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
     });
-  }); */
-
+  });   */
+ 
 //update boolean value when clicked
 router.put("/api/bugers/devoured/:id",function(req,res){
-    let condition = `id = ${req.params.id}`;
+    let condition = "id =" + req.params.id;
     let boolean = req.body.devoured;
 
-    burger.update(boolean,condition, function(result){
-        res.status(202).end();
+    console.log("condition in controller: " + condition)
+    console.log("boolean in controller: " + boolean)
+
+    burger.update({
+        devoured: req.body.devoured},
+        condition, function(result){
+        if (result.changedRows == 0 ) {
+            return res.status(404).end()
+        }else{
+            res.status(202).end();
+     
+        }
     })
 })
 

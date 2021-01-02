@@ -1,5 +1,6 @@
 var connect = require("../config/connection.js");
 
+
 const orm = {
     getall: function (table,data){
         let query_string = `SELECT * FROM ${table}`;
@@ -20,15 +21,17 @@ const orm = {
 
         });
     },
-    update: function(table,col_name,bolean,condition,data){
-       let query_string = `UPDATE ${table} SET ${col_name} = ${bolean} WHERE ${condition} `;
+    update: function(table,col_name,boolean,condition,data){
+       let query_string = `UPDATE ${table} SET ${col_name} = ${boolean} WHERE ${condition} `;
        connect.query(query_string,function(err,result){
             if(err){
                 throw err;
             };
             data(result);
        });
-    },
+    }, 
+
+  
     delete: function(table,condition,data){
         let query_string = `DELETE FROM ${table} WHERE ${condition}`;
         connect.query(query_string,function(err,result){

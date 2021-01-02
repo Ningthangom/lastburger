@@ -9,11 +9,13 @@
         },
         getInput: function(value, data) {
             orm.getInput("burgers","burger_name",value,function(result){
+                console.log('data' + "DATA FROM MODEL", data)
                 data(result);
             });
         },
         update: function(bolean,condition,data){
             orm.update("burgers","devoured",bolean,condition,function(result){
+                console.log("devoured burger from burgers: " + condition)
                 data(result);
             })
         },
