@@ -13,18 +13,16 @@
                 data(result);
             });
         },
-        update: function(bolean,condition,data){
-            orm.update("burgers","devoured",bolean,condition,function(result){
+        update: function(boolean,condition,data){
+            orm.update("burgers","devoured",boolean,condition,function(result){
                 console.log("devoured burger from burgers: " + condition)
                 data(result);
             })
         },
-        delete: function(condition,data){
-            orm.delete("burgers",condition,function(err,result){
-                if(err){
-                    throw err;
-                }
-                data(result)
+        delete: function(condition,cb){
+            orm.delete("burgers",condition,function(res){
+                cb(res);
+                console.log(condition + " delected")
             })
         }
 

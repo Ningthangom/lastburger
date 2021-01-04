@@ -35,7 +35,7 @@ router.get("/",function(req,res){
     });
   });   */
  
-//update boolean value when clicked
+/* //update boolean value when clicked
 router.put("/api/bugers/devoured/:id",function(req,res){
     let condition = "id =" + req.params.id;
     let boolean = req.body.devoured;
@@ -53,15 +53,40 @@ router.put("/api/bugers/devoured/:id",function(req,res){
      
         }
     })
-})
+}) */
+
+router.put("/api/burgers/devoured/:id", function (req, res) {
+    const condition = `id = ${req.params.id};`;
+    const boolean = req.body.devoured;
+    console.log("condition from controller: " + condition)
+    // console.log(condition);
+    // console.log("req.body.devoured", boolean);
+  
+    burger.update(boolean, condition, function (result) {
+      if (result.changedRows === 0) {
+        //if no rows were changed, the ID must not exist so 404
+        return res.status(404).end();
+      }
+      // console.log(`changeRows: ${result.changedRows}`);
+      res.status(202).end();
+    });
+  });
+  
 
 // delete buger after devoured
 router.delete("/api/bugers/:id",function(req,res){
-    let condition = `id = ${req.params.id}`;
 
-    burger.delete(condition,function(result){
+    const condition = `id = ${req.params.id};`;
+    console.log("condition from controller: " + condition)
+  
+    burger.delete(condition, function (result) {
+        if (condition.affectedRows === 0) {
+          //if no rows were changed, the ID must not exist so 404
+          return res.status(404).end();
+        }
+        // console.log(`changeRows: ${result.changedRows}`);
         res.status(202).end();
-    })
+      });
 })
 
 module.exports = router;
