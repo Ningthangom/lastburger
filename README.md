@@ -2,7 +2,7 @@
 
  the user can order burgers, eat them then delete them.
 
-The site is hosted live here: [Live](https://thawing-ravine-88347.herokuapp.com/)
+The site is hosted live here: https://thawing-ravine-88347.herokuapp.com/
 ![gif](/public/assets/images/workingburger.gif)
 
 # How it works
