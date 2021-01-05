@@ -7,7 +7,7 @@ The site is hosted live here: [Live](https://thawing-ravine-88347.herokuapp.com/
 
 # How it works
  - There are three main parts in this application 
-        1.   get user input, store them in data base then show them in burgers to be   devoured
+     1. get user input, store them in data base then show them in burgers to be   devoured
 
        2. change the status of the burgers from not-devoured to devoured
 
