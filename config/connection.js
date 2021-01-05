@@ -2,15 +2,15 @@
 const mysql = require("mysql");
 var connection;
 
-var db_config ={
+/*  var db_config ={
   host: "localhost",
   port: 3306,
   user: "root",
   password: "Ning_thang_om_96",
   database: "burger_db"
-}
+}  */
 
-/* if (process.env.JAWSDB_URL) {
+  if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
@@ -20,8 +20,9 @@ var db_config ={
     password: "Ning_thang_om_96",
     database: "burger_db"
   });
-} */
-/* 
+} 
+ 
+
 connection.on('error', function(err) {
   console.log("[mysql error]",err);
 });
@@ -32,11 +33,11 @@ connection.connect(function (err) {
     return;
   }
   console.log("connected as id " + connection.threadId);
-}); */
-/* 
-var connection; */
+});
 
-function handleDisconnect() {
+/* var connection; */ 
+
+/* function handleDisconnect() {
   connection = mysql.createConnection(db_config); // Recreate the connection, since
                                                   // the old one cannot be reused.
 
@@ -56,7 +57,7 @@ function handleDisconnect() {
     }
   });
 }
+*/
+/* handleDisconnect(); */
 
-handleDisconnect();
-
-module.exports = connection;
+module.exports = connection; 
