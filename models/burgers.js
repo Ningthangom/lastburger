@@ -19,9 +19,9 @@
                 data(result);
             })
         },
-        delete: function(condition,cb){
-            orm.delete("burgers",condition,function(res){
-                cb(res);
+        delete: function(condition,data){
+            orm.delete("burgers",condition,function(rs){
+                data(rs);
                 console.log(condition + " delected")
             })
         }

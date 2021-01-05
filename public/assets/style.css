@@ -1,13 +1,80 @@
 
+
 body {
     background-size: cover;
-    background-color: white;
+    background-color:gray;
     background-position: 50%;
-    width: 100vw;
-    height: 100vh;
+    background-image: url("./images/burgerdrawn.png");
+    background-size: 50% ;
+    background-repeat: no-repeat;
     font-family: 'Red Hat Text', sans-serif;
   }
   
+  .title {
+      position: relative;
+      left: 0%;
+      margin: 2rem;
+      font-family: fantasy;
+      font-style: italic;
+
+  }
+  #Burgers{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+  }
 .devoured-container{
-    background-color: white;
+    background-color: black;
+    width: 30%;
+    color: white;
+    position: relative;
+    right: 5%;
+}
+
+.placedOrder {
+    position: relative;
+    left: 2%;
+    background-color: rgb(92, 63, 63);
+    width: 45%;
+    color: white;
+}
+
+.btn {
+    background-color: blue;
+    color: white;
+}
+
+.btn:hover {
+    color: red;
+}
+
+.notyet-devoured-container {
+    background-color:coral;
+    width: 40%;
+    color: white;
+
+}
+
+.devoured-btn {
+    margin: 0.2rem;
+    background-color: blue;
+    color: red;
+}
+
+.devoured-btn:hover {
+    background-color: green;
+    color: white;
+
+}
+
+.delete-btn{
+    margin: 0.2rem;
+}
+
+
+#eat {
+    color: wheat;
+    text-shadow: green;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:rgb(17, 22, 17);
+    
 }
